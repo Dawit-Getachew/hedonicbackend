@@ -2,6 +2,7 @@ import {User, Hedonic} from "../models/user.js";
 
 
 const createHedonic =  async (req, res) => {
+    console.log(req.body)
     const { dataArray, tagName } = req.body;
     const userId = req.user;
   
@@ -18,6 +19,8 @@ const createHedonic =  async (req, res) => {
 
   const getHedonic = async (req, res) => {
     const userId = req.user;
+    console.log(req.user)
+
   
     try {
       const HedonicData = await Hedonic.find({ userId });
